@@ -1,0 +1,25 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2019-05-29 19:49:25.191 UTC</timestamp>
+  <md5sum>df45c60c9c9865edeee06e6af67c9ee2</md5sum>
+  <fileName>com.sparkjava:spark-core-2.9.1.jar</fileName>
+  <usages>
+    <entry>
+      <string>maven-project2</string>
+      <ranges>1-3</ranges>
+    </entry>
+    <entry>
+      <string>maven-project</string>
+      <ranges>4-11</ranges>
+    </entry>
+    <entry>
+      <string>maven-project2/devopsarea:devopsarea</string>
+      <ranges>1-3</ranges>
+    </entry>
+    <entry>
+      <string>maven-project/devopsarea:devopsarea</string>
+      <ranges>4-11</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>

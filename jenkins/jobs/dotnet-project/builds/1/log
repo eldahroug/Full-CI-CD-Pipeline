@@ -1,0 +1,114 @@
+Started by user [8mha:////4HGchNWtowhFwxf0Q2RBLUodLHvdqN1XBs+OGanddlFFAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL93MSM3PzSFADNUle5wgAAAA==[0mmahmoud
+Building in workspace /var/jenkins_home/workspace/dotnet-project
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/zeineldin/Dot-NET-Core-testapp
+ > git init /var/jenkins_home/workspace/dotnet-project # timeout=10
+Fetching upstream changes from https://github.com/zeineldin/Dot-NET-Core-testapp
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/zeineldin/Dot-NET-Core-testapp +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/zeineldin/Dot-NET-Core-testapp # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/zeineldin/Dot-NET-Core-testapp # timeout=10
+Fetching upstream changes from https://github.com/zeineldin/Dot-NET-Core-testapp
+ > git fetch --tags --progress https://github.com/zeineldin/Dot-NET-Core-testapp +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 344ea5c626e431a2cfa67cb58b65ca49df80a13a (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 344ea5c626e431a2cfa67cb58b65ca49df80a13a
+Commit message: "Update docker-compose.yml"
+First time build. Skipping changelog.
+[dotnet-project] $ /bin/sh -xe /tmp/jenkins5798983154986947426.sh
++ docker build -t eldahroug/dotnet_tetsapp .
+Sending build context to Docker daemon  3.049MB
+Step 1/11 : FROM microsoft/dotnet:2.2-sdk AS build
+2.2-sdk: Pulling from microsoft/dotnet
+c5e155d5a1d1: Already exists
+221d80d00ae9: Already exists
+4250b3117dca: Already exists
+3b7ca19181b2: Pulling fs layer
+3466298fc231: Pulling fs layer
+310737d73ed1: Pulling fs layer
+dc981de74fae: Pulling fs layer
+dc981de74fae: Waiting
+3466298fc231: Verifying Checksum
+3466298fc231: Download complete
+3b7ca19181b2: Verifying Checksum
+3b7ca19181b2: Download complete
+3b7ca19181b2: Pull complete
+3466298fc231: Pull complete
+dc981de74fae: Verifying Checksum
+dc981de74fae: Download complete
+310737d73ed1: Verifying Checksum
+310737d73ed1: Download complete
+310737d73ed1: Pull complete
+dc981de74fae: Pull complete
+Digest: sha256:3bbfbc6a7ea235322f3af249141e88b20ba06f06d07b5bda92a903bbc2dd7023
+Status: Downloaded newer image for microsoft/dotnet:2.2-sdk
+ ---> e4747ec2aaff
+Step 2/11 : WORKDIR /app
+ ---> Running in 6a9af3678eec
+Removing intermediate container 6a9af3678eec
+ ---> bea627ed62d8
+Step 3/11 : COPY *.sln .
+ ---> a19bad6c2e13
+Step 4/11 : COPY aspnetapp/. ./aspnetapp/
+ ---> f563db2fc822
+Step 5/11 : RUN dotnet restore
+ ---> Running in 942d92335155
+  Restore completed in 590.24 ms for /app/aspnetapp/aspnetapp.csproj.
+Removing intermediate container 942d92335155
+ ---> 981bbf679565
+Step 6/11 : WORKDIR /app/aspnetapp
+ ---> Running in d40f02cedf97
+Removing intermediate container d40f02cedf97
+ ---> ed3ee6d3b065
+Step 7/11 : RUN dotnet publish -c Release -o out
+ ---> Running in 2792c4cdb8cd
+Microsoft (R) Build Engine version 16.1.76+g14b0a930a7 for .NET Core
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Restore completed in 36.99 ms for /app/aspnetapp/aspnetapp.csproj.
+  aspnetapp -> /app/aspnetapp/bin/Release/netcoreapp2.2/aspnetapp.dll
+  aspnetapp -> /app/aspnetapp/bin/Release/netcoreapp2.2/aspnetapp.Views.dll
+  aspnetapp -> /app/aspnetapp/out/
+Removing intermediate container 2792c4cdb8cd
+ ---> babd8990f01b
+Step 8/11 : FROM microsoft/dotnet:2.2-aspnetcore-runtime AS runtime
+2.2-aspnetcore-runtime: Pulling from microsoft/dotnet
+743f2d6c1f65: Pulling fs layer
+074da88b8de0: Pulling fs layer
+ac831735b47a: Pulling fs layer
+6269ae3efb28: Pulling fs layer
+6269ae3efb28: Waiting
+ac831735b47a: Verifying Checksum
+ac831735b47a: Download complete
+074da88b8de0: Verifying Checksum
+074da88b8de0: Download complete
+743f2d6c1f65: Verifying Checksum
+743f2d6c1f65: Download complete
+743f2d6c1f65: Pull complete
+6269ae3efb28: Verifying Checksum
+6269ae3efb28: Download complete
+074da88b8de0: Pull complete
+ac831735b47a: Pull complete
+6269ae3efb28: Pull complete
+Digest: sha256:7f1261b3a4981f9b073749dd786e9ab57fab48114474ddbd29bf5b40b6a4e8d5
+Status: Downloaded newer image for microsoft/dotnet:2.2-aspnetcore-runtime
+ ---> f6d51449c477
+Step 9/11 : WORKDIR /app
+ ---> Running in 04b65e40f453
+Removing intermediate container 04b65e40f453
+ ---> 49b30e1114b4
+Step 10/11 : COPY --from=build /app/aspnetapp/out ./
+ ---> a96522df725d
+Step 11/11 : ENTRYPOINT ["dotnet", "aspnetapp.dll"]
+ ---> Running in ad7c23e2f3fa
+Removing intermediate container ad7c23e2f3fa
+ ---> 875381ea2664
+Successfully built 875381ea2664
+Successfully tagged eldahroug/dotnet_tetsapp:latest
++ docker run -d -p 6060:80 eldahroug/dotnet_tetsapp
+be76f5fa1e44045a580a021b41867f57e98b58b5d1680573c9b1b0ed35181236
+Finished: SUCCESS

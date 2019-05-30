@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed May 29 23:01:55 UTC 2019
+spark-core-2.9.1.jar>central=
+spark-core-2.9.1.pom>central=
+spark-core-2.9.1.jar>artifactory-release=
+spark-core-2.9.1.pom>artifactory-release=

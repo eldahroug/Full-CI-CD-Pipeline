@@ -1,0 +1,28 @@
+version: '3.2'
+services:
+  jenkins:
+    image: jenkinsci/jenkins
+    volumes:
+      - ./jenkins:/var/jenkins_home:rw
+      - ./war:/mnt/:rw
+    ports:
+      - 8080:8080
+    container_name: jenkins
+
+  tomcat:
+    image: tomcat
+    ports:
+      - 7777:8080
+    container_name: tomcat
+    depends_on:
+      - jenkins
+    volumes:
+      - ./war/:/usr/local/tomcat/webapps
+
+  artifactory:
+    image: mattgruter/artifactory
+    ports:
+      - 9090:8080
+    container_name: artifactory
+    volumes: 
+      - ./artifactory:/artifactory:rw 

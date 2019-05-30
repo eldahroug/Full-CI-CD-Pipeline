@@ -1,0 +1,21 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2019-05-29 19:49:25.143 UTC</timestamp>
+  <original>
+    <name>maven-project/devopsarea:devopsarea</name>
+    <number>4</number>
+  </original>
+  <md5sum>271c11fd171e87f6fd6b3cf89c920854</md5sum>
+  <fileName>devopsarea:devopsarea-1.0.war</fileName>
+  <usages>
+    <entry>
+      <string>maven-project</string>
+      <ranges>4</ranges>
+    </entry>
+    <entry>
+      <string>maven-project/devopsarea:devopsarea</string>
+      <ranges>4</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>

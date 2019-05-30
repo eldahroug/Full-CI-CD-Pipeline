@@ -1,0 +1,80 @@
+Started by user [8mha:////4HGchNWtowhFwxf0Q2RBLUodLHvdqN1XBs+OGanddlFFAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL93MSM3PzSFADNUle5wgAAAA==[0mmahmoud
+Building in workspace /var/jenkins_home/workspace/dotnet-project
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/zeineldin/Dot-NET-Core-testapp # timeout=10
+Fetching upstream changes from https://github.com/zeineldin/Dot-NET-Core-testapp
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/zeineldin/Dot-NET-Core-testapp +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 344ea5c626e431a2cfa67cb58b65ca49df80a13a (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 344ea5c626e431a2cfa67cb58b65ca49df80a13a
+Commit message: "Update docker-compose.yml"
+ > git rev-list --no-walk 344ea5c626e431a2cfa67cb58b65ca49df80a13a # timeout=10
+[dotnet-project] $ /bin/sh -xe /tmp/jenkins5476325015164824550.sh
++ docker build -t ****/dotnet_tetsapp .
+Sending build context to Docker daemon  3.049MB
+Step 1/11 : FROM microsoft/dotnet:2.2-sdk AS build
+ ---> e4747ec2aaff
+Step 2/11 : WORKDIR /app
+ ---> Using cache
+ ---> bea627ed62d8
+Step 3/11 : COPY *.sln .
+ ---> Using cache
+ ---> a19bad6c2e13
+Step 4/11 : COPY aspnetapp/. ./aspnetapp/
+ ---> Using cache
+ ---> f563db2fc822
+Step 5/11 : RUN dotnet restore
+ ---> Using cache
+ ---> 981bbf679565
+Step 6/11 : WORKDIR /app/aspnetapp
+ ---> Using cache
+ ---> ed3ee6d3b065
+Step 7/11 : RUN dotnet publish -c Release -o out
+ ---> Using cache
+ ---> babd8990f01b
+Step 8/11 : FROM microsoft/dotnet:2.2-aspnetcore-runtime AS runtime
+ ---> f6d51449c477
+Step 9/11 : WORKDIR /app
+ ---> Using cache
+ ---> 49b30e1114b4
+Step 10/11 : COPY --from=build /app/aspnetapp/out ./
+ ---> Using cache
+ ---> a96522df725d
+Step 11/11 : ENTRYPOINT ["dotnet", "aspnetapp.dll"]
+ ---> Using cache
+ ---> 875381ea2664
+Successfully built 875381ea2664
+Successfully tagged ****/dotnet_tetsapp:latest
++ docker login -u=**** -p=****
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
++ docker push ****/dotnet_tetsapp
+The push refers to repository [docker.io/****/dotnet_tetsapp]
+195fd10d9d0d: Preparing
+965360ce1859: Preparing
+429fde2df15d: Preparing
+ecf7942d9af2: Preparing
+ea4e5356527d: Preparing
+6270adb5794c: Preparing
+6270adb5794c: Waiting
+ea4e5356527d: Mounted from microsoft/dotnet
+ecf7942d9af2: Mounted from microsoft/dotnet
+429fde2df15d: Mounted from microsoft/dotnet
+6270adb5794c: Mounted from microsoft/dotnet
+965360ce1859: Pushed
+195fd10d9d0d: Pushed
+latest: digest: sha256:ec84212394fbfaea30b58e32c5cac8785046ae83320ff23a0452795374749c5a size: 1580
++ docker run -d -p 6060:80 ****/dotnet_tetsapp
+459247825c36d2b4b6b47b72a3e5cc319f29c8d06be77f5835d96570fed3919e
+docker: Error response from daemon: driver failed programming external connectivity on endpoint clever_chandrasekhar (583c339a2461d609942446a1e77819575cc247e7ef4ac5b5c6fcb9a30ef8e461): Bind for 0.0.0.0:6060 failed: port is already allocated.
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

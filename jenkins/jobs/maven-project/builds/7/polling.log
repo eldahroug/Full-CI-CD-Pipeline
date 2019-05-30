@@ -1,0 +1,11 @@
+Started on May 29, 2019 8:21:24 PM
+Started by event from 140.82.115.69 ⇒ http://38.76.31.85:8080/github-webhook/ on Wed May 29 20:21:23 UTC 2019
+Using strategy: Default
+[poll] Last Built Revision: Revision ec0101bf06685d0d748809e92c2d39acd1d6fa9d (refs/remotes/origin/master)
+No credentials specified
+ > git --version # timeout=10
+ > git ls-remote -h https://github.com/eldahroug/Java-testapp/ # timeout=10
+Found 3 remote heads on https://github.com/eldahroug/Java-testapp/
+[poll] Latest remote head revision on refs/heads/master is: 46fd67dea647471e4883b30eb1b4e9f17776a0c1
+Done. Took 0.15 sec
+Changes found

@@ -1,0 +1,33 @@
+Started by user [8mha:////4HGchNWtowhFwxf0Q2RBLUodLHvdqN1XBs+OGanddlFFAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL93MSM3PzSFADNUle5wgAAAA==[0mmahmoud
+Building in workspace /var/jenkins_home/workspace/maven-project
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/eldahroug/Project-B # timeout=10
+Fetching upstream changes from https://github.com/eldahroug/Project-B
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/eldahroug/Project-B +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 577d217a259fa50fe25fccfeae16823372db5a9e (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 577d217a259fa50fe25fccfeae16823372db5a9e
+Commit message: "adding sonarqube project"
+ > git rev-list --no-walk 577d217a259fa50fe25fccfeae16823372db5a9e # timeout=10
+[maven-project] $ /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/DevOpsArea/bin/mvn install
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.051 s
+[INFO] Finished at: 2019-05-29T19:39:06Z
+[INFO] ------------------------------------------------------------------------
+[8mha:////4AAiB8dc1Pa92cdBhXo1LYNDUZGNGuEYhIMj+Dj5wG4cAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] The goal you specified requires a project to execute but there is no POM in this directory (/var/jenkins_home/workspace/maven-project). Please verify you invoked Maven from the correct directory. -> [Help 1]
+[8mha:////4AAiB8dc1Pa92cdBhXo1LYNDUZGNGuEYhIMj+Dj5wG4cAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4AAiB8dc1Pa92cdBhXo1LYNDUZGNGuEYhIMj+Dj5wG4cAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[8mha:////4AAiB8dc1Pa92cdBhXo1LYNDUZGNGuEYhIMj+Dj5wG4cAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[8mha:////4AAiB8dc1Pa92cdBhXo1LYNDUZGNGuEYhIMj+Dj5wG4cAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4AAiB8dc1Pa92cdBhXo1LYNDUZGNGuEYhIMj+Dj5wG4cAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[8mha:////4AAiB8dc1Pa92cdBhXo1LYNDUZGNGuEYhIMj+Dj5wG4cAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MissingProjectException
+Build step 'Invoke top-level Maven targets' marked build as failure
+Finished: FAILURE

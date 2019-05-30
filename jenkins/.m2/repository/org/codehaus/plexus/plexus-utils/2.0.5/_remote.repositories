@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed May 29 23:02:26 UTC 2019
+plexus-utils-2.0.5.jar>artifactory-release=
+plexus-utils-2.0.5.jar>central=
+plexus-utils-2.0.5.pom>artifactory-release=
+plexus-utils-2.0.5.pom>central=
